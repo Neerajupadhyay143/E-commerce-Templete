@@ -36,7 +36,7 @@ function ThirdHeader() {
     });
 
     return (
-        <div  className="flex flex-col md:flex-row items-center p-1 space-y-4 md:space-y-0">
+        <div  className="flex flex-col md:flex-row items-center p-5 space-y-4 md:space-y-0">
             <div className="flex flex-1 space-x-3 items-center justify-center md:justify-start">
                 <img
                     src="/assets/images/Rectangle.png"
