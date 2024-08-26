@@ -1,32 +1,42 @@
-"use client";
+"use client"; // Indicates that this component is client-side rendered
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Menu, MenuItem, IconButton } from '@mui/material';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 import "../globals.css";
 
 function HeaderDesktop() {
+    // State to track the currently active page for highlighting the active menu item
     const [activePage, setActivePage] = useState('');
+    // State to manage the anchor element for the mobile menu
     const [anchorEl, setAnchorEl] = useState(null);
+    // Boolean to determine if the mobile menu is open
     const open = Boolean(anchorEl);
 
+    // Handles the click event for menu items, setting the active page
     const handleButtonClick = (page) => {
         setActivePage(page);
     };
 
+    // Opens the mobile menu by setting the anchor element
     const handleMenuOpen = (event) => {
         setAnchorEl(event.currentTarget);
     };
 
+    // Closes the mobile menu by resetting the anchor element
     const handleMenuClose = () => {
         setAnchorEl(null);
     };
 
     return (
-        <div
-            className='flex flex-col items-center space-x-7 space-y-7 -mt-6 md:mt-1 md:p-12 lg:p-12 transition-all ease-in-out'>
+        <div className='flex flex-col items-center space-x-7 space-y-7 -mt-6 md:mt-1 md:p-12 lg:p-12 transition-all ease-in-out'>
+
+            {/* Container for the header content */}
             <div className='flex flex-row items-center justify-between w-full'>
+
+                {/* Search bar with animated appearance */}
                 <motion.div
                     initial={{
                         x: -500,
@@ -42,13 +52,17 @@ function HeaderDesktop() {
                         duration: 1.2,
                     }}
                     className='search-bar flex flex-grow-1 border justify-between max-w-96 w-96 rounded-full bg-[#EEF7F7] items-center'>
-                    <input type="text" placeholder='Suchen' className='placeholder-custom-placeholder bg-transparent outline-none pt-1 pb-2 pr-4 pl-4 w-full text-[#62C3C6]' />
+                    <input
+                        type="text"
+                        placeholder='Suchen'
+                        className='placeholder-custom-placeholder bg-transparent outline-none pt-1 pb-2 pr-4 pl-4 w-full text-[#62C3C6]'
+                    />
                     <div className='mr-2'>
                         <img src="/assets/images/Search.png" alt="search" />
                     </div>
                 </motion.div>
 
-                {/* Desktop Menu */}
+                {/* Desktop Menu with animated appearance and clickable items */}
                 <motion.div
                     initial={{
                         x: 500,
@@ -64,6 +78,7 @@ function HeaderDesktop() {
                         duration: 1.2,
                     }}
                     className='flex space-x-10 hidden sm:flex md:flex text-nowrap'>
+                    {/* Menu items with hover and click effects */}
                     <div
                         className={`flex items-center space-x-1 cursor-pointer transition-transform duration-300 transform hover:scale-110 ${activePage === 'bestellprozess' && 'font-bold'}`}
                         onClick={() => handleButtonClick('bestellprozess')}>
@@ -125,7 +140,7 @@ function HeaderDesktop() {
                     </div>
                 </motion.div>
 
-                {/* Right Side Icons and Menu */}
+                {/* Right Side Icons and Mobile Menu */}
                 <motion.div
                     initial={{
                         x: 500,
@@ -141,17 +156,20 @@ function HeaderDesktop() {
                         duration: 1.2,
                     }}
                     className='flex items-center space-x-10'>
+
+                    {/* Icon with hover effect */}
                     <div className='flex items-center -mr-9 md:mr-0 space-x-1 cursor-pointer transition-transform duration-300 transform hover:scale-110'>
                         <img src="/assets/images/Vector.png" alt="dim" className='w-14 md:w-6 m-1' />
                     </div>
 
+                    {/* Login button for desktop view */}
                     <div className='h-8 hidden md:flex '>
                         <button className="Headerbutton px-5 py-1 bg-[#ECFEAA] text-[#045A5C] border-2 border-transparent outline-none hover:border-[#ffef5b] hover:animate-borderAnimation transition-all duration-300 hover:scale-105 transition-transform ">
                             Anmelden
                         </button>
                     </div>
 
-                    {/* Mobile Menu */}
+                    {/* Mobile Menu with Icon and Items */}
                     <div className='flex sm:hidden items-center space-x-2'>
                         <IconButton onClick={handleMenuOpen}>
                             <MenuIcon />
