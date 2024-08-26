@@ -164,7 +164,7 @@ function ProductPage() {
                     </div>
                 </div>
 
-                <div className=" hidden md:block absolute bottom-[-175%] right-12 p-4">
+                <div className=" hidden md:block absolute bottom-[-184%] right-12 p-4">
                     <PaginationCart />
                 </div>
 
