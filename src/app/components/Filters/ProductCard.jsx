@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
 
     return (
         <div className="p-4"> {/* Added padding to the container */}
-            <div className="w-full max-w-[310px] h-auto gap-3 rounded-[30px_0px_30px_0px] overflow-hidden border-[2px] border-[#28E3E9] transition-all ease-in-out delay-150">
+            <div className=" w-full max-w-[310px] min-h-96 gap-3 rounded-[30px_0px_30px_0px] overflow-hidden border-[2px] border-[#28E3E9] transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
                 {/* Availability Label */}
                 <div className="w-full h-auto p-[20px_20px_0px_20px]">
                     {product.isAvailable ? (
@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
                                     sofort lieferbar
                                 </p>
                                 <p className="flex items-center text-[#0D7052] bg-[#0D7052]/5  text-nowrap p-[3px_12px] rounded-full text-[12px] font-[300] leading-[15.12px] tracking-[0.01em]">
-                                   
+
                                     Neu
                                 </p>
                             </div>
@@ -44,7 +44,7 @@ const ProductCard = ({ product }) => {
                         alt="Product Image"
                         width={310}
                         height={150}
-                        className="object-cover"
+                        className= "object-cover transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-2"
                     />
                 </div>
 

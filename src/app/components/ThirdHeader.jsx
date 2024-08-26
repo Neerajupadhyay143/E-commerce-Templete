@@ -4,9 +4,7 @@ import React from 'react';
 import ListIcon from '@mui/icons-material/List';
 import Switch from '@mui/material/Switch';
 import { styled } from '@mui/material/styles';
-import { Fullscreen } from '@mui/icons-material';
-import zIndex from '@mui/material/styles/zIndex';
-
+import { motion } from 'framer-motion'
 function ThirdHeader() {
 
     const CustomSwitch = styled(Switch)({
@@ -33,12 +31,12 @@ function ThirdHeader() {
         },
         '& .MuiSwitch-track': {
 
-            color: "rgba(98, 195, 198, 0.3)",   
+            color: "rgba(98, 195, 198, 0.3)",
         },
     });
 
     return (
-        <div className="flex flex-col md:flex-row items-center p-1 space-y-4 md:space-y-0">
+        <div  className="flex flex-col md:flex-row items-center p-1 space-y-4 md:space-y-0">
             <div className="flex flex-1 space-x-3 items-center justify-center md:justify-start">
                 <img
                     src="/assets/images/Rectangle.png"
