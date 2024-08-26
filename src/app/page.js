@@ -12,8 +12,8 @@ export default function Home() {
     <>
       <div className="flex flex-col min-h-screen">
         {/* Main content container */}
-        <div className="flex-grow p-9 transition ease-in-out">
-          <div>
+        <div className="flex-grow  transition ease-in-out">
+          <div className="p-9">
             <HeaderDesktop />
           </div>
           <div className="md:-mt-12">
